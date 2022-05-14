@@ -16,7 +16,7 @@ const Service = ({ service }) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">Price :{price}</p>
                     <p className="card-text"><small>{description}</small></p>
-                    <a onClick={() => navigateToServiceDetail(id)} href="" className="btn btn-primary">Book:{name}</a>
+                    <a onClick={() => navigateToServiceDetail(id)} href="" className="btn btn-primary">Book : {name}</a>
                 </div>
             </div>
         </div>

@@ -3,42 +3,42 @@
         "id": 1,
         "name": "ENGINE DIAGNOSTIC",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "Diagnostic tests can reveal problems within a car's engine and other major components, as well as performance issues with the fuel injector, air flow and coolant, ignition coils, and throttle.an appointment designated to figuring out the issue with your vehicle.",
         "img": "https://i.ibb.co/dGDkr4v/1.jpg"
     },
     {
         "id": 2,
         "name": "WHEEL ALIGNMENT",
         "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "A wheel alignment is done using an alignment machine that measures your wheel angles. These are calculated and compared against your vehicle's original specifications. The technician makes adjustments to the camber, caster, and toe of each wheel as needed.",
         "img": "https://i.ibb.co/tY8dmnP/2.jpg"
     },
     {
         "id": 3,
         "name": "OIL CHANGING",
         "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "Our Signature Service® is more than just an oil change, it’s a comprehensive, preventive maintenance program that helps maintain the value and longevity of your vehicle. Jiffy Lube® goes the extra mile to change, inspect, check/fill and clean essential components of your vehicle.",
         "img": "https://i.ibb.co/Yh04YVw/3.jpg"
     },
     {
         "id": 4,
-        "name": "BRAKE REPARING",
+        "name": "BRAKE REPAIRING",
         "price": "180",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "Good brake service should include flushing the old brake fluid, adding new, replacing the pads, resurfacing rotors, and adjusting braking mechanisms.Parking brakes,brake lines and hoses, and the brake assemblies should also be checked at this time.",
         "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
     },
     {
         "id": 5,
         "name": "WASH AND GLASSING",
         "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "description": "A car wash, carwash, or auto wash is a facility used to clean the exterior, and in some cases the interior of motor vehicles. Car washes can be self-service, full-service (with attendants who wash the vehicle), or fully automated (possibly connected to a gas station).",
         "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
     },
     {
         "id": 6,
         "name": "COMPLETE ANALYSIS",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "description": "Vehicle Analysis provides claims professionals with the necessary tools to evaluate claims involving fire and mechanical failure in vehicles of all types. Our experts are skilled in the numerous technical systems that compose vehicles today.",
         "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
     }
 ]

@@ -20,8 +20,8 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Components to diagnose issues</h3>
+                        <p>Inspecting vehicle engine and mechanical/electrical. </p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -32,8 +32,8 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Vehicle diagnostic</h3>
+                        <p>Working knowledge of vehicle diagnostic systems and methods</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -44,9 +44,9 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
+                        <h3>Safety precautions for protections</h3>
                         <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            Willingness to observe all safety precautions for protections against accidents.
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>
