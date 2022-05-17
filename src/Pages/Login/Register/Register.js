@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Register = () => {
@@ -30,7 +31,7 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password)
     }
     return (
-        <div className='container mx-auto w-50 mt-5 pt-4'>
+        <div className='container mx-auto w-50 my-5 pt-4'>
             <h2 className='text-primary text-center pb-3'>Please Register</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicName">
@@ -44,13 +45,14 @@ const Register = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check type="checkbox" label="Accepts genius car terms and condition" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button className='d-block mx-auto w-100' variant="primary" type="submit">
                     Register
                 </Button>
             </Form>
-            <p>Already have an account? <Link to='/login' onClick={navigateToLogin} className='text-danger text-decoration-none'>Login</Link></p>
+            <p className='my-1'>Already have an account? <Link to='/login' onClick={navigateToLogin} className='text-primary text-decoration-none'>Login</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
