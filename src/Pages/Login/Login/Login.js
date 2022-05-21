@@ -5,28 +5,30 @@ import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from './../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef('');
     const navigate = useNavigate();
-
     const location = useLocation();
-
-    let errorElement;
-
     let from = location.state?.from?.pathname || "/";
-
+    let errorElement;
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
     if (user) {
         navigate(from, { replace: true });
     }
-
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
@@ -41,11 +43,15 @@ const Login = () => {
     const navigateToRegister = event => {
         navigate('/register');
     }
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+   
     const resetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if (email) {
+            await sendPasswordResetEmail(email);
+        toast('Sent email');
+        }else{
+            toast('please enter your email address');
+        }
     }
     return (
         <div className='container mx-auto w-50 my-5 pt-4'>
@@ -64,8 +70,10 @@ const Login = () => {
             </Form>
             <p className='my-2'>{errorElement}</p>
             <p className='my-1'>Are you new to Genius Car? <Link to='/register' className='text-primary text-decoration-none' onClick={navigateToRegister}>Please Register</Link></p>
-            <p className='my-1'>Forget Password? <Link to='/register' className='text-primary text-decoration-none' onClick={resetPassword}>Reset Password</Link></p>
+            <p className='my-1'>Forget Password? <button className='btn btn-link text-primary text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
             <SocialLogin></SocialLogin>
+            <ToastContainer />
+
         </div>
     );
 };
