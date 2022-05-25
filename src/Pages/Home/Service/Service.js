@@ -7,10 +7,10 @@ const Service = ({service}) => {
             <div className="card text-center">
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
+                    <h5 className="card-title">{id}.{name}</h5>
                     <p className="card-text">Price :{price}</p>
                     <p className="card-text"><small>{description}</small></p>
-                    <button className="btn btn-primary">Take</button>
+                    <button className="btn btn-primary">Take Service</button>
                 </div>
             </div>
         </div>
