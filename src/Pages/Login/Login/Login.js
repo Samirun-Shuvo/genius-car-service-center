@@ -6,9 +6,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from './../../Shared/Loading/Loading';
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
+import axios from 'axios';
 
 const Login = () => {
     const emailRef = useRef();
@@ -28,18 +29,21 @@ const Login = () => {
         return <Loading></Loading>
     }
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
     if (error) {
         errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         // console.log(email, password);
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const {data}= await axios.post('https://shielded-everglades-68842.herokuapp.com/login',{email});
+        localStorage.setItem('accessToken',data.accessToken);
+        navigate(from, { replace: true });
     }
     const navigateToRegister = event => {
         navigate('/register');
@@ -74,8 +78,6 @@ const Login = () => {
             <p className='my-1'>Are you new to Genius Car? <Link to='/register' className='text-primary text-decoration-none' onClick={navigateToRegister}>Please Register</Link></p>
             <p className='my-1'>Forget Password? <button className='btn btn-link text-primary text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
             <SocialLogin></SocialLogin>
-            <ToastContainer />
-
         </div>
     );
 };
