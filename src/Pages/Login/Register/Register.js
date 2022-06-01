@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useToken from "../../Hooks/useToken";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from './../../Shared/Loading/Loading';
 
@@ -14,6 +15,7 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const [token]=useToken(user);
   const navigate = useNavigate();
 
   const navigateToLogin = (event) => {
@@ -22,8 +24,8 @@ const Register = () => {
   if (loading || updating) {
     return <Loading></Loading>
 }
-  if (user) {
-    console.log('user', user);
+  if (token) {
+    navigate('/home');
   }
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -35,7 +37,6 @@ const Register = () => {
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     console.log("Updated profile");
-    navigate("/home");
   };
   return (
     <div className="container mx-auto w-50 my-5 pt-4">
